@@ -16,7 +16,7 @@ module OFX
           description:       node.search('desc').inner_text.upcase,
           bank_id:           nested_account_info.search('bankid').inner_text,
           id:                nested_account_info.search('acctid').inner_text,
-          type:              nested_account_info.search('accttype').inner_text.upcase
+          type:              nested_account_info.search('accttype').inner_text.downcase
         })
       end
     end
