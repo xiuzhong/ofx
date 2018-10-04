@@ -9,12 +9,14 @@ require "ofx/parser"
 require "ofx/parser/ofx102"
 require "ofx/parser/ofx103"
 require "ofx/parser/ofx211"
+require "ofx/parser/ofx220"
 require "ofx/foundation"
 require "ofx/balance"
 require "ofx/account"
 require "ofx/sign_on"
 require "ofx/transaction"
 require "ofx/version"
+require "ofx/account_info"
 
 def OFX(resource, &block)
   parser = OFX::Parser::Base.new(resource).parser
