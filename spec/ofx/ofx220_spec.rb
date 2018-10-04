@@ -36,7 +36,7 @@ describe OFX::Parser::OFX220 do
         @acct_info.description.should == 'DEBIT'
         @acct_info.bank_id.should == '123457890'
         @acct_info.id.should == '4298429'
-        @acct_info.type.should == 'CHECKING'
+        @acct_info.type.should == :checking
       end
     end
 
@@ -50,7 +50,7 @@ describe OFX::Parser::OFX220 do
         @acct_info.description.should == 'SAVINGS'
         @acct_info.bank_id.should == '123457890'
         @acct_info.id.should == '4298428'
-        @acct_info.type.should == 'SAVINGS'
+        @acct_info.type.should == :savings
       end
     end
 
@@ -64,7 +64,7 @@ describe OFX::Parser::OFX220 do
         @acct_info.description.should == 'CREDIT CARD'
         @acct_info.bank_id.should == ''
         @acct_info.id.should == '4400720'
-        @acct_info.type.should == ''
+        @acct_info.type.should == nil
       end
     end
 
@@ -78,7 +78,7 @@ describe OFX::Parser::OFX220 do
         @acct_info.description.should == 'BUSINESS LOC'
         @acct_info.bank_id.should == '123457890'
         @acct_info.id.should == '4247835'
-        @acct_info.type.should == 'CREDITLINE'
+        @acct_info.type.should == :creditline
       end
     end
 
@@ -92,7 +92,7 @@ describe OFX::Parser::OFX220 do
         @acct_info.description.should == 'BUSINESS LOAN'
         @acct_info.bank_id.should == '123457890'
         @acct_info.id.should == '4247835'
-        @acct_info.type.should == 'CREDITLINE'
+        @acct_info.type.should == :creditline
       end
     end
   end
