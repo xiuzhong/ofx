@@ -75,14 +75,6 @@ module OFX
         acct_type ||= node.search('ccacctinfo').any? ? :creditcard : nil
       end
 
-      def build_status(node)
-        OFX::Status.new({
-          :code              => node.search("code").inner_text.to_i,
-          :severity          => SEVERITY[node.search("severity").inner_text],
-          :message           => node.search("message").inner_text,
-        })
-      end
-
       def build_sign_on
         OFX::SignOn.new({
           :language          => html.search("signonmsgsrsv1 > sonrs > language").inner_text,
